@@ -1,0 +1,20 @@
+{
+  "NAME": "B9ShuttleWings",
+  "URL": "http://ksp.spacetux.net/avc/B9ShuttleWings",
+  "DOWNLOAD": "https://forum.kerbalspaceprogram.com/index.php?/topic/183403-*",
+  "GITHUB": {
+    "USERNAME": "linuxgurugamer",
+    "REPOSITORY": "B9ShuttleWings"
+  },
+  "VERSION": {
+    "MAJOR": 1,
+    "MINOR": 4,
+    "PATCH": 0,
+    "BUILD": 0
+  },
+  "KSP_VERSION_MIN": {
+    "MAJOR": 1,
+    "MINOR": 6,
+    "PATCH": 1
+  }
+}

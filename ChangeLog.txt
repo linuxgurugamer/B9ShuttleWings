@@ -1,0 +1,19 @@
+0.1.4
+	LGG adoption
+	updated parameters and added missing to bring parts up-to-date
+	Moved all TweakScale lines into single script
+	Removed the FSmeshSwitch, now uses the stock method using mirrorRefAxis 
+	Replaced the FSairBrake with stock ModuleAeroSurface
+	Added ModuleB9PartSwitch to the control surface to allow switching
+	between surface attach and node attach
+	Replaced old .mu files for the wing and control surface with a new one
+	which only has a single model in it
+	Added two incremental sizes
+	DDSified all image files
+
+	Added two new elvon sizes (actually copies of stock)
+		ModuleB9PartSwitch controls nodes
+			node attach
+			surface attach
+	Added ModuleB9PartSwitch to wing to control nodes
+		0, 1, or 2 nodes

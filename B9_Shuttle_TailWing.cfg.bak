@@ -1,0 +1,112 @@
+PART
+{
+    // --- general parameters ---
+    name = B9_Shuttle_TailWing
+    module = Part
+    author = gilbr0ther
+
+    // --- asset parameters ---
+    MODEL
+    {
+        model = GilB9Shuttle_Wings/Parts/B9_Shuttle_TailWing
+    }
+    scale = 1
+    rescaleFactor = 1
+
+    // --- editor parameters ---
+    TechRequired = supersonicFlight
+    entryCost = 2980
+    cost = 745
+    category = Aero
+    subcategory = 0
+    title = Shuttle Tail Wing
+    manufacturer = Makintosh Mecanonics
+    description = This wing is tilted upward shuttle with slightly more of glue and less plastic.
+
+    // attachment rules: stack, srfAttach, allowStack, allowSrfAttach, allowCollision
+    attachRules = 0,1,0,1,1
+
+    // --- node definitions ---
+    // definition format is Position X, Position Y, Position Z, Up X, Up Y, Up Z
+    node_attach = 0.0, 0.0, 0.0, 1.0, 0.0, 0.0
+
+    // --- standard part parameters ---
+    mass = 0.071
+    dragModelType = override
+    maximum_drag = 0.02
+    minimum_drag = 0.02
+    breakingForce = 150
+    breakingTorque = 150
+    angularDrag = 2
+    crashTolerance = 12
+    maxTemp = 3400
+    explosionPotential = 0.1
+    fuelCrossFeed = True
+
+    MODULE
+    {
+        name = ModuleControlSurface
+        dragCoeff = 0.81
+        deflectionLiftCoeff = 1.35
+        ctrlSurfaceRange = 20
+        ctrlSurfaceArea = 0.2225
+    }
+
+MODULE
+{
+	name = TweakScale
+	type = GilB9Shuttlewings
+	
+}
+
+    MODULE
+    {
+        name = FSairBrake
+        targetPartObject = Left_rud
+        deployedDrag = 100
+        deployedAngle = 45
+        stepAngle = 10
+    }
+    MODULE
+    {
+        name = FSairBrake
+        targetPartObject = Right_rud_base
+        deployedDrag = 100
+        deployedAngle = 45
+        stepAngle = 10
+    }
+
+MODULE
+{
+  	name = ModuleParachute
+	invertCanopy = true
+	autoCutSpeed = 0.5
+	capName = cap
+	canopyName = canopy
+	semiDeployedAnimation = semiDeployLarge
+	fullyDeployedAnimation = fullDeployLarge
+	stowedDrag = 0.22
+	semiDeployedDrag = 3
+	fullyDeployedDrag = 170
+	minAirPressureToOpen = 0.007
+	deployAltitude = 2500
+	deploymentSpeed = 1
+	semiDeploymentSpeed = 1	
+	}
+}
+@PART[B9_Shuttle_TailWing]:NEEDS[FerramAerospaceResearch|NEAR] {
+    @maximum_drag = 0
+    @minimum_drag = 0
+    @angularDrag = 0
+    !MODULE[ModuleControlSurface] {}
+    MODULE
+    {
+        name = FARControllableSurface
+        MAC = 2.858
+        MidChordSweep = 21.7
+        maxdeflect = 15
+        b_2 = 2.75
+        TaperRatio = 0.446
+        ctrlSurfFrac = 0.2225
+    }
+}
